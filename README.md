@@ -13,24 +13,20 @@
   <h3>
     <img src="https://readme-typing-svg.demolab.com?font=Righteous&size=35&duration=3500&pause=1000&color=12D8FA&center=true&vCenter=true&width=500&height=70&lines=BTech+CSE+Student+%F0%9F%8E%93;Full-Stack+Learner+%F0%9F%92%BB;Open+Source+Contributor+%F0%9F%8C%9F" alt="Role Animation"/>
   </h3>
-
-  <!-- Profile Views Counter with Animation -->
-  <img src="https://komarev.com/ghpvc/?username=YourUsername&style=for-the-badge&color=blueviolet" alt="Profile Views" />
-  
 </div>
 
 ## 🌟 About Me
 
 <img align="right" alt="Coding GIF" width="400" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
 
-```yaml
+
 name: "Avni Gangwaar"
 location: "Farruhabad"
 education: "BTech Computer Science Engineering"
 interests: ["Web Development"]
 currently_learning: ["Frontend", "Java", "Python"]
 fun_fact: "I debug with print statements and I'm proud of it! 😄"
-```
+
 
 - 🔭 I'm currently working on **Full-Stack Web Development**
 - 🌱 I'm currently learning **Java ,DSA**
@@ -67,19 +63,6 @@ fun_fact: "I debug with print statements and I'm proud of it! 😄"
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-
-## 📈 Contribution Graph
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YourUsername&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph" />
-</div>
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
-
-
-
-
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🤝 Let's Connect
 
