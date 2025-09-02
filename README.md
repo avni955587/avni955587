@@ -87,12 +87,6 @@ fun_fact: "I debug with print statements and I'm proud of it! 😄"
 
 </div>
 
-<!-- Snake Animation -->
-<div align="center">
-  <img src="https://raw.githubusercontent.com/YourUsername/YourUsername/output/github-contribution-grid-snake.svg" alt="Snake Animation" />
-</div>
-
----
 
 <div align="center">
   
@@ -103,17 +97,3 @@ fun_fact: "I debug with print statements and I'm proud of it! 😄"
   
 </div>
 
-
-**avni955587/avni955587** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
