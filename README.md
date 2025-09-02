@@ -1,4 +1,3 @@
-## Hi there 👋
 
 # 💫 Welcome to My Digital Universe! 
 
@@ -37,7 +36,6 @@ fun_fact: "I debug with print statements and I'm proud of it! 😄"
 - 🌱 I'm currently learning **Java ,DSA**
 - 👯 I'm looking to collaborate on **Open Source Projects**
 - 💬 Ask me about **JavaScript, Python, Java ,Web Development**
-- 📫 How to reach me: **avni955587@gmail.com**
 - ⚡ Fun fact: **I think I'm funny (I'm not) 😂**
 
 <br clear="both">
