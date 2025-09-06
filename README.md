@@ -1,194 +1,213 @@
+import { useEffect, useState } from 'react';
+import { TypingAnimation } from '@/components/TypingAnimation';
+import { GitHubStats } from '@/components/GitHubStats';
+import { SkillBadges } from '@/components/SkillBadges';
+import { ProjectShowcase } from '@/components/ProjectShowcase';
+import { AboutSection } from '@/components/AboutSection';
 
-# Hi there! 👋 I'm [Your Name]
+const Index = () => {
+  const [showContent, setShowContent] = useState(false);
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=BTech+CSE+Student+%F0%9F%8E%93;Full-Stack+Developer+%F0%9F%92%BB;Open+Source+Contributor+%F0%9F%8C%9F;Problem+Solver+%F0%9F%A7%A9" alt="Typing SVG" />
-</div>
+  useEffect(() => {
+    const timer = setTimeout(() => setShowContent(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500" height="320" alt="Coding">
-</div>
+  const roles = [
+    "BTech CSE Student",
+    "Full-Stack Learner", 
+    "Open Source Contributor",
+    "Problem Solver",
+    "Code Enthusiast"
+  ];
 
-## 🌟 About Me
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-primary opacity-5 rounded-full animate-pulse-glow" />
+        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-secondary opacity-5 rounded-full animate-pulse-glow" style={{ animationDelay: '1s' }} />
+      </div>
 
-<img align="right" alt="Coding" width="400" src="https://user-images.githubusercontent.com/74038190/229223263-cf2e4b07-2615-4f87-9c38-e37600f8381a.gif">
+      <div className="container mx-auto px-6 py-12 space-y-20">
+        {/* Hero Section */}
+        <section className={`text-center space-y-8 transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          {/* Profile Image */}
+          <div className="relative mx-auto w-32 h-32 mb-8">
+            <div className="w-full h-full rounded-full bg-gradient-primary animate-pulse-glow" />
+            <div className="absolute inset-2 rounded-full bg-card flex items-center justify-center text-4xl animate-float">
+              👨‍💻
+            </div>
+          </div>
 
-```javascript
-const developer = {
-    name: "Your Name",
-    location: "India 🇮🇳",
-    education: "BTech Computer Science Engineering",
-    currentFocus: "Full-Stack Development",
-    askMeAbout: ["Web Dev", "Mobile Apps", "Data Structures", "Algorithms"],
-    technologies: {
-        frontEnd: ["React", "HTML5", "CSS3", "JavaScript"],
-        backEnd: ["Node.js", "Python", "Django", "Java"],
-        databases: ["MongoDB", "MySQL", "PostgreSQL"],
-        tools: ["Git", "GitHub", "VS Code", "Postman"]
-    },
-    currentlyLearning: "Advanced React & System Design",
-    funFact: "I debug with console.log() and I'm proud of it! 😄"
+          {/* Name & Title */}
+          <div className="space-y-4">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent animate-fade-up">
+              Your Name
+            </h1>
+            <div className="text-xl md:text-2xl text-muted-foreground h-8">
+              <TypingAnimation 
+                texts={roles}
+                speed={100}
+                deleteSpeed={50}
+                pauseTime={2000}
+                className="font-medium"
+              />
+            </div>
+          </div>
+
+          {/* Welcome Message */}
+          <div className={`max-w-3xl mx-auto space-y-4 transition-all duration-1000 delay-300 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <p className="text-lg text-foreground leading-relaxed">
+              Welcome to my GitHub profile! 👋 I'm passionate about creating amazing digital experiences
+              and solving complex problems through code.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              {[
+                { emoji: "📍", text: "India" },
+                { emoji: "🎯", text: "Available for opportunities" },
+                { emoji: "💻", text: "Love to code" },
+                { emoji: "🌱", text: "Always learning" }
+              ].map((item, index) => (
+                <span 
+                  key={item.text}
+                  className={`flex items-center space-x-2 px-4 py-2 bg-card border border-card-border rounded-full
+                    hover:shadow-glow-primary transition-all duration-300 cursor-pointer hover:scale-105
+                    opacity-0 animate-bounce-in-delay-${index + 1}`}
+                >
+                  <span>{item.emoji}</span>
+                  <span className="text-sm font-medium text-foreground">{item.text}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className={`flex justify-center space-x-6 transition-all duration-1000 delay-500 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {[
+              { name: "GitHub", icon: "🐙", url: "#" },
+              { name: "LinkedIn", icon: "💼", url: "#" },
+              { name: "Twitter", icon: "🐦", url: "#" },
+              { name: "Email", icon: "📧", url: "#" }
+            ].map((social, index) => (
+              <a
+                key={social.name}
+                href={social.url}
+                className={`group relative w-12 h-12 bg-card border border-card-border rounded-full flex items-center justify-center
+                  hover:shadow-glow-accent transition-all duration-300 hover:scale-110 hover:-translate-y-1
+                  opacity-0 animate-bounce-in-delay-${index + 1}`}
+                title={social.name}
+              >
+                <span className="text-xl group-hover:scale-110 transition-transform duration-300">
+                  {social.icon}
+                </span>
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-card border border-card-border rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {social.name}
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* GitHub Stats Section */}
+        <section className={`transition-all duration-1000 delay-700 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <GitHubStats />
+        </section>
+
+        {/* About Me Section */}
+        <section className={`transition-all duration-1000 delay-900 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <AboutSection />
+        </section>
+
+        {/* Skills Section */}
+        <section className={`transition-all duration-1000 delay-1100 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <SkillBadges />
+        </section>
+
+        {/* Projects Section */}
+        <section className={`transition-all duration-1000 delay-1300 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <ProjectShowcase />
+        </section>
+
+        {/* Activity Section */}
+        <section className={`transition-all duration-1000 delay-1500 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <div className="text-center space-y-8">
+            <h2 className="text-3xl font-bold bg-gradient-accent bg-clip-text text-transparent">
+              GitHub Activity
+            </h2>
+            
+            {/* Contribution Graph Placeholder */}
+            <div className="bg-card border border-card-border rounded-xl p-8 hover:shadow-glow-success transition-all duration-300">
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground">📈 Contribution Graph</h3>
+                <div className="grid grid-cols-52 gap-1 max-w-4xl mx-auto">
+                  {Array.from({ length: 365 }, (_, i) => (
+                    <div
+                      key={i}
+                      className={`w-3 h-3 rounded-sm ${
+                        Math.random() > 0.7 ? 'bg-success' :
+                        Math.random() > 0.5 ? 'bg-accent opacity-60' :
+                        Math.random() > 0.3 ? 'bg-primary opacity-40' :
+                        'bg-muted'
+                      } hover:scale-125 transition-transform duration-200 cursor-pointer`}
+                      title={`${Math.floor(Math.random() * 10)} contributions`}
+                    />
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  🔥 Consistent activity throughout the year with <span className="text-success font-semibold">1,847 contributions</span> in the last year
+                </p>
+              </div>
+            </div>
+
+            {/* GitHub Trophies */}
+            <div className="bg-card border border-card-border rounded-xl p-8 hover:shadow-glow-warning transition-all duration-300">
+              <h3 className="text-lg font-semibold text-foreground mb-6">🏆 GitHub Trophies</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {[
+                  { trophy: "🥇", name: "MultiLanguage", desc: "Used 5+ languages" },
+                  { trophy: "⭐", name: "Stars", desc: "Received 100+ stars" },
+                  { trophy: "🍴", name: "Forks", desc: "Received 50+ forks" },
+                  { trophy: "📝", name: "Commits", desc: "Made 500+ commits" },
+                  { trophy: "🔄", name: "PullRequest", desc: "Created 50+ PRs" },
+                  { trophy: "📈", name: "Followers", desc: "Has 100+ followers" }
+                ].map((trophy, index) => (
+                  <div 
+                    key={trophy.name}
+                    className={`text-center p-3 bg-muted rounded-lg hover:bg-gradient-warning hover:text-white 
+                    transition-all duration-300 cursor-pointer group hover:scale-105
+                    opacity-0 animate-bounce-in-delay-${(index % 4) + 1}`}
+                  >
+                    <div className="text-2xl mb-2 group-hover:animate-bounce">{trophy.trophy}</div>
+                    <div className="text-xs font-semibold">{trophy.name}</div>
+                    <div className="text-xs opacity-75">{trophy.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className={`text-center py-12 transition-all duration-1000 delay-1700 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+          <div className="space-y-4">
+            <p className="text-muted-foreground">
+              ⚡ Powered by passion and coffee ☕
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Made with ❤️ using React, TypeScript & Tailwind CSS
+            </p>
+            <div className="flex justify-center items-center space-x-2 text-xs text-muted-foreground">
+              <span>Last updated:</span>
+              <span className="font-mono bg-muted px-2 py-1 rounded">
+                {new Date().toLocaleDateString()}
+              </span>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
 };
-```
 
-<br clear="both"/>
-
-## 🛠️ Tech Stack
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=java,python,javascript,html,css,react,nodejs,django,git,github,mongodb,mysql,vscode,postman&theme=dark&perline=7" alt="Tech Stack" />
-</div>
-
-<div align="center">
-  
-  ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-  ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
-  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-  ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-  ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-  ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-  
-</div>
-
-## 📊 GitHub Analytics
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=F85D7F&icon_color=F85D7F&text_color=FFFFFF"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=F85D7F&text_color=FFFFFF"/>
-</div>
-
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME&theme=tokyonight&hide_border=true&background=0D1117&stroke=0000&ring=F85D7F&fire=F85D7F&currStreakLabel=F85D7F" alt="GitHub Streak" />
-</div>
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=YOUR_USERNAME&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&margin-h=4&column=7" alt="GitHub Trophies" />
-</div>
-
-## 🎯 Current Projects
-
-<div align="center">
-
-| 🚀 Project | 📝 Description | 🛠️ Tech Stack | 🔗 Links |
-|------------|----------------|----------------|----------|
-| **E-Commerce Platform** | Full-stack web application with modern UI | React, Node.js, MongoDB | [Demo](https://github.com) \| [Code](https://github.com) |
-| **Task Management App** | Productivity app with real-time updates | Django, PostgreSQL, WebSockets | [Demo](https://github.com) \| [Code](https://github.com) |
-| **Algorithm Visualizer** | Interactive visualization of sorting algorithms | Vanilla JS, HTML5 Canvas | [Demo](https://github.com) \| [Code](https://github.com) |
-
-</div>
-
-## 🌈 Contribution Graph
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=F85D7F&line=F85D7F&point=FFFFFF&area_color=F85D7F&area=true" alt="Contribution Graph" />
-</div>
-
-## 🎨 Skills Visualization
-
-<div align="center">
-  
-**Frontend Development**
-![HTML](https://progress-bar.dev/90/?scale=100&title=HTML&width=200&color=babaca&suffix=%)
-![CSS](https://progress-bar.dev/85/?scale=100&title=CSS&width=200&color=babaca&suffix=%)
-![JavaScript](https://progress-bar.dev/80/?scale=100&title=JavaScript&width=200&color=babaca&suffix=%)
-![React](https://progress-bar.dev/75/?scale=100&title=React&width=200&color=babaca&suffix=%)
-
-**Backend Development**
-![Python](https://progress-bar.dev/85/?scale=100&title=Python&width=200&color=babaca&suffix=%)
-![Java](https://progress-bar.dev/80/?scale=100&title=Java&width=200&color=babaca&suffix=%)
-![Node.js](https://progress-bar.dev/70/?scale=100&title=Node.js&width=200&color=babaca&suffix=%)
-![Django](https://progress-bar.dev/75/?scale=100&title=Django&width=200&color=babaca&suffix=%)
-
-</div>
-
-## 🏆 Achievements & Certifications
-
-<div align="center">
-  
-🥇 **Problem Solving** - Solved 300+ DSA problems across platforms  
-🎯 **Open Source** - Contributed to 10+ repositories  
-📚 **Learning** - Completed 5+ online courses in Full-Stack Development  
-🌟 **Projects** - Built 15+ personal and academic projects  
-
-</div>
-
-## 📈 Coding Activity
-
-<div align="center">
-  
-<!--START_SECTION:waka-->
-**I'm an Early 🐤** 
-
-```text
-🌞 Morning    127 commits    ████████░░░░░░░░░░░░░░░░░   32.4% 
-🌆 Daytime    156 commits    ██████████░░░░░░░░░░░░░░░   39.8% 
-🌃 Evening     89 commits    █████░░░░░░░░░░░░░░░░░░░░   22.7% 
-🌙 Night       20 commits    █░░░░░░░░░░░░░░░░░░░░░░░░    5.1%
-```
-
-```text
-Monday       65 commits     ████░░░░░░░░░░░░░░░░░░░░░   16.6% 
-Tuesday      78 commits     █████░░░░░░░░░░░░░░░░░░░░   19.9% 
-Wednesday    52 commits     ███░░░░░░░░░░░░░░░░░░░░░░   13.3% 
-Thursday     68 commits     ████░░░░░░░░░░░░░░░░░░░░░   17.3% 
-Friday       49 commits     ███░░░░░░░░░░░░░░░░░░░░░░   12.5% 
-Saturday     43 commits     ██░░░░░░░░░░░░░░░░░░░░░░░   11.0% 
-Sunday       37 commits     ██░░░░░░░░░░░░░░░░░░░░░░░    9.4%
-```
-<!--END_SECTION:waka-->
-
-</div>
-
-## 🤝 Connect with Me
-
-<div align="center">
-  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/YOUR_PROFILE)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/YOUR_HANDLE)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/YOUR_PROFILE)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://your-portfolio.com)
-[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@gmail.com)
-
-</div>
-
-## 💡 Random Dev Quote
-
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border=true" alt="Random Dev Quote" />
-</div>
-
-## 🎵 Spotify Playing
-
-<div align="center">
-  
-[![Spotify](https://spotify-recently-played-readme.vercel.app/api?user=YOUR_SPOTIFY_USER&count=1&unique=true)](https://open.spotify.com/user/YOUR_SPOTIFY_USER)
-
-</div>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-</div>
-
----
-
-<div align="center">
-  
-### 💙 Thanks for visiting my profile! 
-**Let's build something amazing together! 🚀**
-
-<img src="https://komarev.com/ghpvc/?username=YOUR_USERNAME&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" />
-<img src="https://img.shields.io/github/followers/YOUR_USERNAME?label=Followers&style=social" alt="GitHub Followers" />
-
-</div>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="400" height="250">
-</div>
-
-<!-- Snake Animation -->
-<div align="center">
-  <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_USERNAME/output/snake.svg" alt="Snake animation" />
-</div>
+export default Index;
