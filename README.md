@@ -18,13 +18,14 @@
 
 <img align="right" alt="Coding GIF" width="400" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" />
 
-
+```
 name: "Avni Gangwaar"
 location: "Farruhabad"
 education: "BTech Computer Science Engineering"
 interests: ["Web Development"]
 currently_learning: ["Frontend", "Java", "Python"]
 fun_fact: "I debug with print statements and I'm proud of it! 😄"
+```
 
 
 
