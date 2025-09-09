@@ -28,11 +28,11 @@ fun_fact: "I debug with print statements and I'm proud of it! 😄"
 
 
 
-- 🔭 I'm currently working on *Full-Stack Web Development*
-- 🌱 I'm currently learning *Java ,DSA*
-- 👯 I'm looking to collaborate on *Open Source Projects*
-- 💬 Ask me about *JavaScript, Python, Java ,Web Development*
-- ⚡ Fun fact: *I think I'm funny (I'm not) 😂*
+- 🔭 I'm currently working on Full-Stack Web Development
+- 🌱 I'm currently learning Java ,DSA
+- 👯 I'm looking to collaborate on Open Source Projects
+- 💬 Ask me about JavaScript, Python, Java ,Web Development
+- ⚡ Fun fact: I think I'm funny (I'm not) 😂
 
 <br clear="both">
 
@@ -89,7 +89,7 @@ fun_fact: "I debug with print statements and I'm proud of it! 😄"
 
 <div align="center">
   
-  *💜 Made with love and lots of ☕*
+  💜 Made with love and lots of ☕
   
   <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
   <img src="https://forthebadge.com/images/badges/powered-by-coffee.svg" />
